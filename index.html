@@ -930,7 +930,7 @@
               </div>
 
               <div class="footer-note">
-                Put audio at <code>./assets/audio/song.mp3</code> or <code>./assets/audio/song.wav</code>. If audio is missing, the game still works in silent mode. If local browser file restrictions block chart loading, use the file pickers on the right to load chart and audio manually.
+                Put audio at <code>./song.mp3</code> (root) or <code>./assets/audio/song.mp3</code> / <code>./assets/audio/song.wav</code>. If audio is missing, the game still works in silent mode. If local browser file restrictions block chart loading, use the file pickers on the right to load chart and audio manually.
               </div>
             </div>
           </div>
@@ -1001,7 +1001,7 @@
         <h2>Files</h2>
         <div class="status-list">
           <div class="status-row"><span>Default chart path</span><strong>./VisiPiano.json</strong></div>
-          <div class="status-row"><span>Audio fallback</span><strong>./assets/audio/song.mp3 / .wav</strong></div>
+          <div class="status-row"><span>Audio fallback</span><strong>./song.(mp3/wav/ogg) or ./assets/audio/song.(mp3/wav/ogg)</strong></div>
         </div>
         <div class="picker-row" style="margin-top:12px;">
           <div>
@@ -1054,7 +1054,14 @@
   <script>
     const DEFAULTS = {
       chartPath: "./VisiPiano.json",
-      audioCandidates: ["./assets/audio/song.mp3", "./assets/audio/song.wav", "./assets/audio/song.ogg"],
+      audioCandidates: [
+        "./song.mp3",
+        "./song.wav",
+        "./song.ogg",
+        "./assets/audio/song.mp3",
+        "./assets/audio/song.wav",
+        "./assets/audio/song.ogg"
+      ],
       title: "E85 Sync",
       bpm: 120,
       offsetMs: 0,
